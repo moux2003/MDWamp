@@ -24,8 +24,6 @@
 #include <CommonCrypto/CommonDigest.h>
 #include <CommonCrypto/CommonHMAC.h>
 
-#import "NSData+SRB64Additions.h"
-
 @interface MDWamp () <SRWebSocketDelegate, NSURLConnectionDelegate>
 {
 	int autoreconnectRetries;
@@ -72,7 +70,7 @@
     NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
                                           length:sizeof(cHMAC)];
     
-    NSString *hash = [HMAC SR_stringByBase64Encoding];
+    NSString *hash = HMAC.base64Encoding;
     
     return hash;
 }
