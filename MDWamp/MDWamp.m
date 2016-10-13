@@ -375,7 +375,7 @@ static NSString *wampProcedureURL = @"http://api.wamp.ws/procedure";
 		
 		[self.rpcUriMap removeObjectForKey:callID];
 	} else if (receivedMessage.type == MDWampMessageTypeEvent) {
-		NSString *topicUri = [receivedMessage shiftStackAsString];
+		_topicUri = [receivedMessage shiftStackAsString];
 		
 		id eventPayload = [receivedMessage shiftStack];
 		

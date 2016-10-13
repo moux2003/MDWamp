@@ -70,6 +70,11 @@
  */
 @property (nonatomic, assign) NSInteger autoreconnectMaxRetries;
 
+/**
+ * The current topic used
+ */
+@property (nonatomic, copy, readonly) NSString *topicUri;
+
 #pragma mark - 
 #pragma mark Init methods
 /**
