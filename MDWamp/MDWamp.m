@@ -379,7 +379,7 @@ static NSString *wampProcedureURL = @"http://api.wamp.ws/procedure";
 		
 		id eventPayload = [receivedMessage shiftStack];
 		
-		NSArray *subscribers = [_subscribersCallbackMap objectForKey:topicUri];
+		NSArray *subscribers = [_subscribersCallbackMap objectForKey:_topicUri];
         
 		if (subscribers != nil){
 			for (void (^eventCallback)(id payload) in subscribers){
